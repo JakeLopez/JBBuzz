@@ -28,7 +28,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Team Syntax</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
@@ -53,8 +53,8 @@
     <header class="masthead">
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
-          <h1 class="mx-auto my-0 text-uppercase">Jingle Bell Buzz</h1>
-          <h2 class="text-white-50 mx-auto mt-2 mb-5">some short description of project. added this to test update</h2>
+          <h1 class="mx-auto my-0 text-uppercase">Merry Christmas Morse Code </h1>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
           <a href="#about" class="btn btn-primary js-scroll-trigger">Get Started</a>
         </div>
       </div>
@@ -66,14 +66,72 @@
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <h2 class="text-white mb-4">Introduction</h2>
-            <p class="text-white-50">Remember, a Jedi can feel the Force flowing through him. You mean it controls your actions? Partially. But it also obeys your commands. 
-              Hokey religions and ancient weapons are no match for a good blaster at your side, kid. You don't believe in the Force, do you? Kid, I've flown from one side 
-              of this galaxy to the other. I've seen a lot of strange stuff, but I've never seen anything to make me believe there's one all-powerful force controlling everything. 
-              There's no mystical energy field that controls my destiny. It's all a lot of simple tricks and nonsense. I suggest you try it again, Luke. This time, let go your conscious 
-              self and act on instinct. With the blast shield down, I can't even see. How am I supposed to fight? Your eyes can deceive you. Don't trust them
-              <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-              <h2 class="text-white mb-4">Micro Controller</h2>
-              <p class="text-white-50">And, now Your Highness, we will discuss the location of your hidden Rebel base.</p>
+              <p class="text-white-50">Our group decided to pair LED lights with the Piezo Buzzer to perform a sequences of buzzes that coincided with Morse Code. In the sections below
+                we will cover the hardware used along with an indepth look at exactly what challenges we ran into and what we learned along the way.  </p>
+            <h2 class="text-white mb-4">Micro Controller</h2>
+                <p class="text-white-50">The Arduino Uno R3 is a microcontroller board based on the ATmega328. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 
+                  6 analog inputs, a 16 MHz crystal oscillator, a USB connection, a power jack, an ICSP header, and a reset button. It contains everything needed to support the microcontroller; 
+                  simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started. (info from https://www.trossenrobotics.com/p/arduino-uno.aspx)
+                  I found it interesting that certain ports contain a modulator that helps with the buzzers pitch. I also think the test light on the board came in handy when running simple test and 
+                  definetly saved us time. 
+                    
+                    The Uno differs from all preceding boards in that it does not use the FTDI USB-to-serial driver chip. Instead, it features the Atmega16U2 (Atmega8U2 up to version R2) programmed as a USB-to-serial converter.</p>
+            <h2 class="text-white mb-4">Test Device</h2>
+                <p class="text-white-50">We used a piezo buzzer that was controlled by the microcontroller for our project. The Piezo buzzer is an electronic device commonly used to 
+                  produce sound. Light weight, simple construction and low price make it usable in various applications like car/truck reversing indicator, computers, alarms, and more. 
+                  The Piezo buzzer is based on the inverse principle of piezo electricity, discovered in 1880 by Jacques and Pierre Curie. It is the phenomena of generating electricity 
+                  when mechanical pressure is applied to certain materials and the vice versa is also true. The faster you bend the material, the higher the pitch of the noise that’s 
+                  produced. This rate is called frequency. </p>
+            <h2 class="text-white mb-4">Development Tools</h2>
+                <p class="text-white-50">During the development of our project we used various tools in order to complete our work. In addition to the hardware that was required, there
+                   was also additional software that was involved. All of the tools that were used are detailed below.
+                    
+                   <br> Hardware:</br> 
+                   Arduino Uno R-3 Microcontroller
+                   Breadboard
+                   220 Ohm Resistors
+                   Power Wires
+                   USB Adapter
+                   Piezo Buzzer
+                   LED Lights
+                    
+                    <br>Software:</br>
+                    Arduino IDE
+                    mVim
+                    GitHub
+                    AVR-tools Makefile (by rblack42)
+                    CMD Line</p>
+
+             <h2 class="text-white mb-4">Our Experiment</h2>
+                <p class="text-white-50">For our experiment we initially picked a servo to work with. We couldn’t find anything we were passionate about to experiment with the servo with
+                   the amount of time we had. So, we moved on to working with the piezo buzzer Our initial goal was to play a few Christmas melodies with the piezo buzzer, but the documentation 
+                   for the tone and digital write function was very hard to find. It became more of a challenge than we had time to complete. We really wanted to get something working in assembly 
+                   for our project, and converting the Arduino code to C and then assembly for the type of functions we were to perform to play a song was a monumental task. Wanting a finished product 
+                   to show, we moved on to something we would be able to write and compile given our earlier practice with assembly blinking and led and buzzing a buzzer. Keeping with the Christmas theme 
+                   we then decided to send a “Merry Christmas” message using Morse code. We could reuse the majority of the code from the homework assignments and modify it to do what we wanted it to do. 
+                   This took quite a bit of trial and error getting our delay function right to send Morse code, and also to do a slowed down version so we could decipher the Morse code and see that 
+                   it was correct. Ultimately, we prevailed and the experiment was a success. Consulting we another group we also managed to get a led blinking in tandem with the Morse code signals. 
+                   Unfortunately, this is not multitasking. But just initiating another function call that happened so fast you don’t see it. 
+                   <bk>In order to connect the devices for our experiment we needed the following:</bk>
+                      Arduino Uno microcontroller
+                      5 power wires of varying sizes and colors
+                      3 220 ohm resistors (to keep led’s from burning out, and reduce sound output on the buzzer)
+                      1 Piezo Buzzer
+                      2 led lights
+                      
+                     </p>
+           <h2 class="text-white mb-4">Conclusion</h2>
+              <p class="text-white-50">The device is very simple, but can do many things with the right instructions. We learned a lot about microcontrollers as we progressed through this experiment. 
+                   You need first and foremost to identify the ports and pins your devices to be controlled are connected to. Writing this in assembly and C isn’t as intuitive as one would think. We 
+                   had to look at a diagram of the connections from the CPU to the individuals pins to obtain the information we needed to make our device work. Although the device is simple, it is 
+                   not forgiving if you give it bad instructions. It took a lot of trial and error to get the device to do what we wanted it to. Hardwiring devices to the controller was another skill 
+                   no one in our group had. At first we limped our way through not knowing what was going on, but eventually gained the knowledge we needed to wire our devices using the breadboard and 
+                   the proper resistors. Even something as simple as grounding one rail of the breadboard, and then connecting the devices grounds to that rail was something we learned during our experimentation. 
+                   A few things we would like to continue on with would be to learn how to multitask with the Arduino. We found code and examples using the Arduino IDE, and that would be a great place to start. 
+                   We had talked in depth about the possibility of making a Rube Goldberg machine using servos and other devices for the Arduino. That would be a great project to dive into multitasking and the 
+                   interrupting of the processor, as opposed to delaying with a function call.</p>
+                
+
           </div>
         </div>
         <img src="img/ipad.png" class="img-fluid" alt="">
@@ -87,49 +145,29 @@
         <!-- Featured Project Row -->
         <div class="row align-items-center no-gutters mb-4 mb-lg-5">
           <div class="col-xl-8 col-lg-7">
-            <img class="img-fluid mb-3 mb-lg-0" src="img/bg-masthead.jpg" alt="">
+            
           </div>
-          <div class="col-xl-4 col-lg-5">
-            <div class="featured-text text-center text-lg-left">
-              <h4>Shoreline</h4>
-              <p class="text-black-50 mb-0">editing this to see the changes live</p>
-            </div>
-          </div>
+         
         </div>
 
         <!-- Project One Row -->
         <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-          <div class="col-lg-6">
-            <img class="img-fluid" src="img/demo-image-01.jpg" alt="">
-          </div>
-          <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-left">
-                  <h4 class="text-white">Misty</h4>
-                  <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
-                  <hr class="d-none d-lg-block mb-0 ml-0">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hHbQ26xXNyk" frameborder="12" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/GkavPiCo3SQ" frameborder="12" 
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/wagIkCoiJMQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+         
+              </bk></bk>
+          </div>
         <!-- Project Two Row -->
         <div class="row justify-content-center no-gutters">
-          <div class="col-lg-6">
-            <img class="img-fluid" src="img/demo-image-02.jpg" alt="">
-          </div>
+          
           <div class="col-lg-6 order-lg-first">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div class="project-text w-100 my-auto text-center text-lg-right">
-                  <h4 class="text-white">Mountains</h4>
-                  <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
-                  <hr class="d-none d-lg-block mb-0 mr-0">
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
 
@@ -138,78 +176,63 @@
 
     <!-- Signup Section -->
     <section id="signup" class="signup-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-lg-8 mx-auto text-center">
-
-            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-            <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
-
-            <form class="form-inline d-flex">
-              <input type="email" class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" placeholder="Enter email address...">
-              <button type="submit" class="btn btn-primary mx-auto">Subscribe</button>
-            </form>
-
-          </div>
-        </div>
-      </div>
+        <div class="container">
+            
+                    <div class="row">
+            
+                      <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                          <div class="card-body text-center">
+                            <h4 class="text-uppercase m-0">Ryan Galloway</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50"> <a href="https://github.com/CodingForKnowledge" class="mx-2">
+                              <i class="fab fa-github"></i>
+                            </a></div>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                          <div class="card-body text-center">
+                            <h4 class="text-uppercase m-0">Lucian Turk</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50">
+                                <a href="https:google.com" class="mx-2">
+                                  <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+            
+                      <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                          <div class="card-body text-center">
+                            <h4 class="text-uppercase m-0">Jacob Lopez</h4>
+                            <hr class="my-4">
+                            <div class="small text-black-50">     
+                              <a href="https://github.com/JakeLopez" class="mx-2">
+                                <i class="fab fa-github"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+            
+                    <div class="social d-flex justify-content-center">
+               
+                 
+                    </div>
+            
+                  </div>
+     
     </section>
 
     <!-- Contact Section -->
     <section class="contact-section bg-black">
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                <h4 class="text-uppercase m-0">Address</h4>
-                <hr class="my-4">
-                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-envelope text-primary mb-2"></i>
-                <h4 class="text-uppercase m-0">Email</h4>
-                <hr class="my-4">
-                <div class="small text-black-50">
-                  <a href="#">hello@yourdomain.com</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-3 mb-md-0">
-            <div class="card py-4 h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                <h4 class="text-uppercase m-0">Phone</h4>
-                <hr class="my-4">
-                <div class="small text-black-50">+1 (555) 902-8832</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="social d-flex justify-content-center">
-          <a href="#" class="mx-2">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="#" class="mx-2">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="#" class="mx-2">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-
-      </div>
+      
     </section>
 
     <!-- Footer -->
